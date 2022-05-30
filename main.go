@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/kmsdoit/blog/routes"
+	"github.com/kmsdoit/blog/services"
+	"github.com/kmsdoit/blog/utility"
+)
 
 func main() {
-	fmt.Println("Go Blog 만들기")
+	var db = utility.GetConnection()
+	services.SetDB(db)
+	log.Println("Listening on Port 8000")
+	routes.UserRouter()
 }
