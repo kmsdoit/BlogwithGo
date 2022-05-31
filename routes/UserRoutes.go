@@ -2,14 +2,14 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/kmsdoit/blog/services"
+	user "github.com/kmsdoit/blog/services/User"
 )
 
 func UserRouter() {
 	r := gin.Default()
-	r.GET("/users", services.GetAllUsers)
-	r.GET("/users/info", services.GetFindByEmail)
-	r.POST("/register", services.Register)
-	r.POST("/login", services.Login)
+	r.GET("/users", user.GetAllUsers)
+	r.GET("/users/info", user.GetFindByEmail)
+	r.POST("/register", user.Register)
+	r.POST("/login", user.Login)
 	r.Run()
 }

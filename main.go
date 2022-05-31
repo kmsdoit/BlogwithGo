@@ -5,7 +5,7 @@ import (
 
 	"github.com/joho/godotenv"
 	"github.com/kmsdoit/blog/routes"
-	"github.com/kmsdoit/blog/services"
+	user "github.com/kmsdoit/blog/services/User"
 	"github.com/kmsdoit/blog/utility"
 )
 
@@ -15,7 +15,7 @@ func main() {
         log.Fatal("Error loading .env file")
     }
 	var db = utility.GetConnection()
-	services.SetDB(db)
+	user.SetDB(db)
 	log.Println("Listening on Port 8000")
 	routes.UserRouter()
 }
