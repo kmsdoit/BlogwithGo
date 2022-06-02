@@ -10,6 +10,7 @@ import (
 	"golang.org/x/crypto/bcrypt"
 )
 
+var mySignKey = []byte(os.Getenv("SECRET_KEY"))
 
 func GenerateHashPassword(password string) (string) {
 	hash,err := bcrypt.GenerateFromPassword([]byte(password),bcrypt.DefaultCost)
@@ -32,7 +33,7 @@ func ComparePassword(hash,password string) (bool) {
 }
 
 func CreateJWT(Email string) (string, error) {
-	mySignKey := []byte(os.Getenv("SECRET_KEY"))
+	
 
 	aToken := jwt.New(jwt.SigningMethodHS256)
 	claims := aToken.Claims.(jwt.MapClaims)
@@ -46,6 +47,7 @@ func CreateJWT(Email string) (string, error) {
 		return token,nil
 	}
 }
+
 
 func SetDB(db *gorm.DB) {
 	dbConn = db

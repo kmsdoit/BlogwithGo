@@ -7,8 +7,6 @@ import (
 	"github.com/kmsdoit/blog/models"
 )
 
-
-
 func GetAllUsers(c *gin.Context) {	
 	var users = models.GetUsers()
 
