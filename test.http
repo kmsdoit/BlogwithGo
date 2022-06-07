@@ -1,5 +1,5 @@
 ### 글생성
-POST http://localhost:8003/api/post/post
+POST http://203.243.17.90:8003/api/post/post
 Content-Type: application/json
 
 {
@@ -19,7 +19,7 @@ Content-Type: application/json
 }
 
 ### 로그인
-POST http://localhost:8003/api/user/login
+POST http://203.243.17.90:8003/api/user/login
 Content-Type: application/json
 
 {

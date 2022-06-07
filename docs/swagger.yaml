@@ -1,0 +1,11 @@
+basePath: /api
+host: localhost
+info:
+  contact:
+    email: mskim@idb.ai
+    name: Request permission of Example API
+  description: This is a Example api server
+  title: Example API
+  version: 0.0.2
+paths: {}
+swagger: "2.0"
