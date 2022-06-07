@@ -6,7 +6,6 @@ import (
 )
 
 func Delete(c *gin.Context) {
-
 	if err := c.BindJSON(&post); err == nil {
 		dbErr := dbConn.Debug().Delete(&post).Error
 		if dbErr == nil {

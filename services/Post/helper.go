@@ -7,6 +7,6 @@ import (
 
 func SetDB(db *gorm.DB) {
 	dbConn = db
-	var post = models.GetPost()
+	post = models.GetPost()
 	dbConn.AutoMigrate(&post)
 }

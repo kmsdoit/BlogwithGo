@@ -5,8 +5,6 @@ import (
 )
 
 func Update(c *gin.Context) {
-	c.Header("Content-type", "application/json")
-
 	if err := c.BindJSON(&post); err == nil {
 		dbErr := dbConn.Debug().Save(&post).Where(&post.ID).Error
 		if dbErr == nil {
