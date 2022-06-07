@@ -1,0 +1,29 @@
+### 글생성
+POST http://localhost:8003/post
+Content-Type: application/json
+
+{
+  "title": "test",
+  "content" : "test",
+  "writer" : "klmmms882912@naver.com"
+}
+
+### 유저 생성
+POST http://localhost:8003/register
+Content-Type: application/json
+
+{
+  "email" : "admin@naver.com",
+  "password" : "admin",
+  "name" : "admin"
+}
+
+### 로그인
+POST http://localhost:8003/login
+Content-Type: application/json
+
+{
+  "email": "admin@naver.com",
+  "password" : "admin"
+}
+

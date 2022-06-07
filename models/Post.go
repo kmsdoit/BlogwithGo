@@ -2,22 +2,21 @@ package models
 
 import "gorm.io/gorm"
 
-type Post struct{
+type Post struct {
 	gorm.Model
-	Title string  `gorm:"type:varchar(255);" json:"Title"`
-	Content  string  `gorm:"type:text" json:"Content"`
-	Writer string `gorm:"type:varchar(255);" json:"Writer"`
-	User User `gorm:"foreignKey:Writer"`
+	Title   string `gorm:"type:varchar(255);" json:"Title"`
+	Content string `gorm:"type:text" json:"Content"`
+	Writer  string `gorm:"type:text" json:"Writer"`
 }
 
-func GetPost() Post{
+func GetPost() Post {
 	var post Post
 
 	return post
 }
 
-func GetPosts() []Post{
+func GetPosts() []Post {
 	var posts []Post
-	
+
 	return posts
 }

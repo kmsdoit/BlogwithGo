@@ -11,11 +11,12 @@ import (
 var post models.Post
 
 func InsertByUserEmail(c *gin.Context) {
+	c.Header("Content-type", "application/json")
 
 	body := json.NewDecoder(c.Request.Body).Decode(&post)
 	postInsert := dbConn.Debug().Save(&post).Error
 	if postInsert == nil && body == nil {
-		dbConn.Debug().Save(post)
+		dbConn.Debug().Save(&post)
 		c.JSON(http.StatusOK, gin.H{
 			"status": "ok",
 			"data":   post})
