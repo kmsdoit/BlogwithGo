@@ -1,5 +1,5 @@
 ### 글생성
-POST http://localhost:8003/post
+POST http://localhost:8003/api/post/post
 Content-Type: application/json
 
 {
@@ -9,17 +9,17 @@ Content-Type: application/json
 }
 
 ### 유저 생성
-POST http://localhost:8003/register
+POST http://localhost:8003/api/user/register
 Content-Type: application/json
 
 {
-  "email" : "admin@naver.com",
+  "email" : "admin@daum.net",
   "password" : "admin",
   "name" : "admin"
 }
 
 ### 로그인
-POST http://localhost:8003/login
+POST http://localhost:8003/api/user/login
 Content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ### 글 수정
-POST http://localhost:8003/postUpdate
+POST http://localhost:8003/api/post/postUpdate
 Content-Type: application/json
 
 {
@@ -39,7 +39,7 @@ Content-Type: application/json
 
 
 ### 글 삭제
-POST http://localhost:8003/postDelete
+POST http://localhost:8003/api/post/postDelete
 Content-Type: application/json
 
 {

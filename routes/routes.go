@@ -1,21 +1,15 @@
 package routes
 
-import (
-	"github.com/gin-gonic/gin"
-	post "github.com/kmsdoit/blog/services/Post"
-	user "github.com/kmsdoit/blog/services/User"
-)
+import "github.com/gin-gonic/gin"
+
+var router = gin.Default()
 
 func Router() {
-	r := gin.Default()
-	r.GET("/users", user.GetAllUsers)
-	r.GET("/users/info", user.GetFindByEmail)
-	r.POST("/register", user.Register)
-	r.POST("/login", user.Login)
-	r.GET("/posts", post.GetAllPosts)
-	r.GET("/verify", user.VerifyAccessToken)
-	r.POST("/post", post.InsertByUserEmail)
-	r.POST("/postUpdate", post.Update)
-	r.POST("/postDelete", post.Delete)
-	r.Run(":8003")
+
+	PostRouter()
+	UserRouter()
+	err := router.Run(":8003")
+	if err != nil {
+		return
+	}
 }
