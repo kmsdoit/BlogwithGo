@@ -2,8 +2,6 @@ package services
 
 import (
 	"encoding/json"
-	"net/http"
-
 	"github.com/gin-gonic/gin"
 	"github.com/kmsdoit/blog/models"
 )
@@ -17,7 +15,7 @@ func InsertByUserEmail(c *gin.Context) {
 	postInsert := dbConn.Debug().Save(&post).Error
 	if postInsert == nil && body == nil {
 		dbConn.Debug().Save(&post)
-		c.JSON(http.StatusOK, gin.H{
+		c.JSON(200, gin.H{
 			"status": "ok",
 			"data":   post})
 	} else {

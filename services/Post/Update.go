@@ -2,7 +2,6 @@ package services
 
 import (
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 func Update(c *gin.Context) {
@@ -12,7 +11,7 @@ func Update(c *gin.Context) {
 		dbErr := dbConn.Debug().Save(&post).Where(&post.ID).Error
 		if dbErr == nil {
 			dbConn.Debug().Save(&post).Where(&post.ID)
-			c.JSON(http.StatusOK, gin.H{
+			c.JSON(200, gin.H{
 				"status": "ok",
 				"data":   &post})
 		} else {
