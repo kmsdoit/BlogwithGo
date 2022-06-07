@@ -7,7 +7,7 @@ import (
 	"github.com/kmsdoit/blog/models"
 )
 
-func GetAllPosts(c *gin.Context) {	
+func GetAllPosts(c *gin.Context) {
 	var posts = models.GetPosts()
 
 	err := dbConn.Find(&posts).Error
@@ -16,8 +16,8 @@ func GetAllPosts(c *gin.Context) {
 			"status": "ok",
 			"data":   posts,
 		})
-	}else {
-		c.JSON(http.StatusNoContent, nil)
+	} else {
+		c.JSON(http.StatusInternalServerError, nil)
 		return
 	}
 }

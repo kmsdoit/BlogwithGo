@@ -5,7 +5,7 @@ Content-Type: application/json
 {
   "title": "test",
   "content" : "test",
-  "writer" : "klmmms882912@naver.com"
+  "writer" : "admin@naver.com"
 }
 
 ### 유저 생성
@@ -27,3 +27,12 @@ Content-Type: application/json
   "password" : "admin"
 }
 
+### 글 수정
+POST http://localhost:8003/post
+Content-Type: application/json
+
+{
+  "id" : 4,
+  "title": "test3",
+  "content" : "test3"
+}

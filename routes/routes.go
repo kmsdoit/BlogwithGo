@@ -15,5 +15,6 @@ func Router() {
 	r.GET("/posts", post.GetAllPosts)
 	r.GET("/verify", user.VerifyAccessToken)
 	r.POST("/post", post.InsertByUserEmail)
+	r.POST("/postUpdate", post.Update)
 	r.Run(":8003")
 }
