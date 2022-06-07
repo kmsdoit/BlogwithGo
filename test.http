@@ -28,11 +28,20 @@ Content-Type: application/json
 }
 
 ### 글 수정
-POST http://localhost:8003/post
+POST http://localhost:8003/postUpdate
 Content-Type: application/json
 
 {
-  "id" : 4,
+  "id" : 1,
   "title": "test3",
   "content" : "test3"
+}
+
+
+### 글 삭제
+POST http://localhost:8003/postDelete
+Content-Type: application/json
+
+{
+  "id" : 1
 }
