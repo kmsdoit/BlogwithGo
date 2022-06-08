@@ -9,7 +9,7 @@ func PostRouter() {
 	{
 		postApi.GET("/getAllPost", post.GetAllPosts)
 		postApi.POST("/post", post.InsertByUserEmail)
-		postApi.POST("/postUpdate", post.Update)
-		postApi.POST("/postDelete", post.Delete)
+		postApi.PATCH("/postUpdate", post.Update)
+		postApi.DELETE("/postDelete", post.Delete)
 	}
 }
