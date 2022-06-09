@@ -12,6 +12,7 @@ func UserRouter() {
 		userApi.POST("/register", user.Register)
 		userApi.POST("/login", user.Login)
 		userApi.GET("/verify", user.VerifyAccessToken)
+		userApi.PATCH("/user", user.UserUpdate)
 	}
 
 }

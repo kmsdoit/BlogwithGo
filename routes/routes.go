@@ -9,7 +9,6 @@ import (
 var router = gin.Default()
 
 func Router() {
-
 	PostRouter()
 	UserRouter()
 	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
